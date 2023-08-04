@@ -51,6 +51,10 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
   ```bash
     chmod +x ./download-wallpapers.sh
   ```
+  Step 3: Run the script and pass the URL to the image file/wallpaper you want to download
+  ```bash
+    ./download-wallpapers.sh https://url_to_image
+  ```
 </details>
 
 <!---------------------------------------- SECTION DIVIDER ---------------------------------------->
