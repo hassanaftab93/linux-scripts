@@ -24,8 +24,7 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
     </h2>
   </summary>
 
-  - Subtopic Detail 1
-  - Subtopic Detail 2
+  - Have Bash Installed
 </details>
 
 <!---------------------------------------- SECTION DIVIDER ---------------------------------------->
@@ -36,13 +35,21 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
     </h2>
   </summary>
 
-  Step 1
+  Step 1: Make a directory 'Pictures/Wallpapers' in Home Directory (if it does not exist)
+    ```bash
+      cd ~
+      sudo mkdir Pictures
+      cd Pictures
+      mkdir Wallpapers
+      cd Wallpapers
+    ```
+  Step 2: Download the script using the command below or [Click Here](./scripts/download-wallpaper.sh)
   ```bash
-    commands / code
+    curl -o download-wallpaper.sh https://raw.githubusercontent.com/hassanaftab93/linux-scripts/main/scripts/download-wallpaper.sh
   ```
-  Step 2
+  Step 2: Give execute permissions to the script
   ```bash
-    commands / code
+    chmod +x ./download-wallpapers.sh
   ```
 </details>
 
