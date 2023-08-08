@@ -31,7 +31,37 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
 <details>
   <summary>
     <h2>
-      📑 Steps
+      📑 Install Ansible
+    </h2>
+  </summary>
+
+  Step 1: Run ansible.sh
+    
+  ```bash
+      ./install/ansible.sh
+  ```
+</details>
+
+<!---------------------------------------- SECTION DIVIDER ---------------------------------------->
+<details>
+  <summary>
+    <h2>
+      📑 Install Terraform
+    </h2>
+  </summary>
+
+  Step 1: Run terraform.sh
+    
+  ```bash
+      ./install/terraform.sh
+  ```
+</details>
+
+<!---------------------------------------- SECTION DIVIDER ---------------------------------------->
+<details>
+  <summary>
+    <h2>
+      📑 Download Wallpaper Script
     </h2>
   </summary>
 
