@@ -77,7 +77,7 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
   Step 2: Download the script using the command below or [Click Here](./scripts/download-wallpaper.sh)
 
   ```bash
-    curl -o download-wallpaper.sh https://raw.githubusercontent.com/hassanaftab93/linux-scripts/main/scripts/download-wallpaper.sh
+    curl -o download-wallpaper.sh https://raw.githubusercontent.com/hassanaftab93/linux-scripts/main/scripts/utility/download-wallpaper.sh
   ```
   Step 3: Give execute permissions to the script
   
