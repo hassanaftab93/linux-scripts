@@ -22,3 +22,6 @@ sudo apt update
 # Install Terraform
 sudo apt install terraform -y
 terraform -help
+
+# Edit .bashrc and add following lines
+# complete -C /usr/bin/terraform terraform
