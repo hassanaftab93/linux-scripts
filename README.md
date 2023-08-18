@@ -1,8 +1,10 @@
 
-# Project Name
+# Linux - Scripts
 
 <!-- --- DEPLOYMENT STATUS CODE ---
 
+<-------------------------------------------------------------------------------------------------->
+<!--
 Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NAME/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/hassanaftab93/REPO-NAME/actions/workflows/main.yml)
 
 -->
@@ -20,11 +22,48 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
 <details>
   <summary>
     <h2>
-      🛠 SubTopic: What to Explain / Dry Runs etc.
+      🛠 Kali Linux
     </h2>
   </summary>
 
-  - Have Bash Installed
+  LINKS:
+
+- Kali Linux Installation: https://www.geeksforgeeks.org/how-to-replace-ubuntu-with-kali-linux/
+- Kali Linux Documentation: https://www.kali.org/docs/
+- Kali Linux: https://www.kali.org/
+
+</details>
+
+<!---------------------------------------- SECTION DIVIDER ---------------------------------------->
+
+<details>
+  <summary>
+    <h2>
+      📑 Linux lid closing problem
+    </h2>
+  </summary>
+
+  Step 1: Open the file logind.conf
+    
+  ```bash
+      sudo gedit /etc/systemd/logind.conf
+  ```
+
+  Step 2: Change the following to these values
+    
+  ```bash
+      HandleSuspendKey=lock
+      HandleHibernateKey=lock
+      HandleLidSwitch=lock
+      HandleLidSwitchExternalPower=lock
+  ```
+
+  Step 3: Run this command
+    
+  ```bash
+      sudo systemctl restart systemd-logind.service
+  ```
+
 </details>
 
 <!---------------------------------------- SECTION DIVIDER ---------------------------------------->
