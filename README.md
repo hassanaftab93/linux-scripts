@@ -28,6 +28,24 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
 </details>
 
 <!---------------------------------------- SECTION DIVIDER ---------------------------------------->
+
+<details>
+  <summary>
+    <h2>
+      📑 Make these scripts executable
+    </h2>
+  </summary>
+
+  Step 1: Give executable rights to all scripts
+    
+  ```bash
+      cd /baseDirectory/of/Project
+      cd ./scripts
+      chmod +x ./**/*
+  ```
+</details>
+
+<!---------------------------------------- SECTION DIVIDER ---------------------------------------->
 <details>
   <summary>
     <h2>
