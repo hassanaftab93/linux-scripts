@@ -71,6 +71,22 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
 <details>
   <summary>
     <h2>
+      📑 Setup Terminal
+    </h2>
+  </summary>
+
+  Step 1: Open this [Repository](https://github.com/hassanaftab93/terminal-profile) and follow instructions
+    
+  ```bash
+      https://github.com/hassanaftab93/terminal-profile
+  ```
+</details>
+
+<!---------------------------------------- SECTION DIVIDER ---------------------------------------->
+
+<details>
+  <summary>
+    <h2>
       📑 Make these scripts executable
     </h2>
   </summary>
