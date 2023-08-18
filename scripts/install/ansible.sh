@@ -8,5 +8,5 @@ sudo apt install software-properties-common
 sudo apt-add-repository --yes --update ppa:ansible/ansible
 
 # Install Ansible
-sudo apt install ansible
+sudo apt install ansible -y
 ansible --version

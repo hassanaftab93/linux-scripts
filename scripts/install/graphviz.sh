@@ -2,4 +2,4 @@
 
 # Update apt and install dependencies
 sudo apt update
-sudo apt install graphviz
+sudo apt install graphviz -y

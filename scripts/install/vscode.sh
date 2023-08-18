@@ -11,4 +11,4 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.micr
 
 # Update and Install vs code
 sudo apt update
-sudo apt install code
+sudo apt install code -y

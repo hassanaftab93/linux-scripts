@@ -20,5 +20,5 @@ sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo apt update
 
 # Install Terraform
-sudo apt install terraform
+sudo apt install terraform -y
 terraform -help
