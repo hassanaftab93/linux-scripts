@@ -14,3 +14,4 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.
 # Install helm
 sudo apt update
 sudo apt install helm
+echo "helm $(helm version)"
