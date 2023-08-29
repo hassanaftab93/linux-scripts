@@ -8,4 +8,4 @@ sudo apt install -y Node.js
 sudo apt install -y npm
 
 # Verify Installation
-Node.js -v && npm --version
+node -v && npm --version
