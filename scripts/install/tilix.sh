@@ -3,4 +3,4 @@
 sudo apt update
 
 #install tmux
-sudo apt install tmux
+sudo apt install tilix
