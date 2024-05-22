@@ -1,0 +1,24 @@
+Host github.com
+User git
+Port 22
+Hostname github.com
+IdentityFile ~/.ssh/id_github
+TCPKeepAlive yes
+IdentitiesOnly yes
+
+Host 51.104.219.127
+  HostName 51.104.219.127
+  IdentityFile ~/.ssh/id_rsa.pub
+  Compression yes
+  User testuser
+
+Host ssh.dev.azure.com
+    HostName ssh.dev.azure.com
+    User git
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_azure
+    IdentityFile ~/.ssh/id_teodevops_ft
+    IdentityFile ~/.ssh/terraform-id_key
+    HostkeyAlgorithms +ssh-rsa
+    PubkeyAcceptedKeyTypes=ssh-rsa
