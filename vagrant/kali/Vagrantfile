@@ -1,0 +1,12 @@
+# Vagrantfile
+Vagrant.configure("2") do |config|
+    config.vm.define "kali" do |kali|
+      kali.vm.box = "kalilinux/rolling"
+  
+      # Ansible provisioning
+      kali.vm.provision "ansible" do |ansible|
+        ansible.playbook = "provision.yaml"
+        ansible.inventory_path = "inventory"
+      end
+    end
+  end
