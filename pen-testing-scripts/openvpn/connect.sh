@@ -1,0 +1,1 @@
+sudo openvpn ~/.openvpn/hassanaftab.pk.ovpn
