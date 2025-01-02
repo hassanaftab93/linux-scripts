@@ -1,12 +1,17 @@
-# Vagrantfile
 Vagrant.configure("2") do |config|
-    config.vm.define "kali" do |kali|
-      kali.vm.box = "kalilinux/rolling"
-  
-      # Ansible provisioning
-      kali.vm.provision "ansible" do |ansible|
-        ansible.playbook = "provision.yaml"
-        ansible.inventory_path = "inventory"
-      end
-    end
+  config.vm.box = "kalilinux/rolling"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"  # 2 GB of RAM
+    vb.cpus = 2         # 2 CPU cores
   end
+
+  config.vm.network "private_network", type: "dhcp"
+  config.vm.network "forwarded_port", guest: 5901, host: 5901  # VNC on port 5901
+
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y tightvncserver
+    tightvncserver :1
+  SHELL
+end
