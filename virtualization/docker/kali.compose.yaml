@@ -2,6 +2,9 @@
 # docker compose -f ./kali.compose.yaml logs
 # version: '3.8'
 
+# USER:     kasm_user
+# Password: password
+
 services:
   kali-desktop:
     image: kasmweb/kali-rolling-desktop:1.16.0
