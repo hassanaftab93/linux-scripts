@@ -1,38 +1,22 @@
-# docker run -d \
-#   --name kali \
-#   --restart unless-stopped \
-#   -p 3011:3000 \
-#   -p 3009:3001 \
-#   --security-opt seccomp=unconfined \
-#   -e PUID=1000 \
-#   -e PGID=1000 \
-#   -e TZ=Asia/Karachi \
-#   -e SUBFOLDER=/ \
-#   -e TITLE="Kali Linux" \
-#   -e USERNAME=kali \
-#   -e PASSWORD=kali \
-#   --device /dev/dri:/dev/dri \
-#   --shm-size="1gb" \
-#   lscr.io/linuxserver/kali-linux:latest
+# docker compose -f ./kali.compose.yaml up -d
+# docker compose -f ./kali.compose.yaml logs
+# version: '3.8'
 
 services:
-  kali:
-    image: lscr.io/linuxserver/kali-linux:latest
-    container_name: kali
-    restart: unless-stopped
+  kali-desktop:
+    image: kasmweb/kali-rolling-desktop:1.16.0
+    container_name: kali-rolling-desktop
+    shm_size: 512m
     ports:
-      - "3011:3000"
-      - "3009:3001"
+      - "6901:6901"
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Asia/Karachi
-      - SUBFOLDER=/
-      - TITLE=Kali Linux
-      - USERNAME=kali
-      - PASSWORD=kali
-    security_opt:
-      - seccomp=unconfined
-    devices:
-      - /dev/dri:/dev/dri
-    shm_size: "1gb"
+      - VNC_PW=password
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
