@@ -22,3 +22,5 @@ sleep 5
 
 # Copy cert and key
 sudo cp /etc/letsencrypt/live/${cert_domain_name#\*.}/{fullchain.pem,privkey.pem} ./$dirName
+
+sudo cat ./$dirName/privkey.pem ./$dirName/fullchain.pem > ./$dirName/$domain_name.pem
