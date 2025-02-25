@@ -3,7 +3,8 @@
 domain_name=$1
 dirName="$domain_name-certificate"
 
-mkdir -p $dirName/miscFiles
+# Create directory for certificate files
+mkdir -p $dirName
 
 # Install Certbot and Simply.com DNS Plugin (if not installed)
 if ! command -v certbot &>/dev/null; then
