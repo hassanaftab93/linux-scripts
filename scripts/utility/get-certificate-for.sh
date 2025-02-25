@@ -1,26 +1,20 @@
 #!/bin/bash
 
 domain_name=$1
-wildcard=$2
 dirName="$domain_name-certificate"
-
-if [ "$wildcard" = "true" ]; then
-  cert_domain_name="*.$domain_name"
-else
-  cert_domain_name=$domain_name
-fi
 
 mkdir -p $dirName/miscFiles
 
-# Generate certificate signing request
-openssl req -new -newkey rsa:2048 -nodes -keyout ./$dirName/miscFiles/$cert_domain_name.key -out ./$dirName/miscFiles/$cert_domain_name.csr
+# Generate certificate signing request (not needed for Certbot, but keeping for reference)
+openssl req -new -newkey rsa:2048 -nodes -keyout ./$dirName/miscFiles/$domain_name.key -out ./$dirName/miscFiles/$domain_name.csr
 
-# Generate self-signed certificate
-sudo certbot certonly --manual --preferred-challenges=dns -d $cert_domain_name
+# Request both root and wildcard certificates
+sudo certbot certonly --manual --preferred-challenges=dns -d "$domain_name" -d "*.$domain_name"
 
 sleep 5
 
-# Copy cert and key
-sudo cp /etc/letsencrypt/live/${cert_domain_name#\*.}/{fullchain.pem,privkey.pem} ./$dirName
+# Copy certificate and key
+sudo cp /etc/letsencrypt/live/$domain_name/{fullchain.pem,privkey.pem} ./$dirName
 
+# Concatenate key and cert into a single PEM file
 sudo cat ./$dirName/privkey.pem ./$dirName/fullchain.pem > ./$dirName/$domain_name.pem
