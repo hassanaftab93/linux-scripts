@@ -8,7 +8,7 @@ mkdir -p $dirName/miscFiles
 # Install Certbot and Simply.com DNS Plugin (if not installed)
 if ! command -v certbot &>/dev/null; then
     echo "Installing Certbot..."
-    sudo apt-get update && sudo apt-get install -y certbot
+    sudo apt update && sudo apt install -y certbot
 fi
 
 # # Generate certificate signing request (not needed for Certbot, but keeping for reference)
