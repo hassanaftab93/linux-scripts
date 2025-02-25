@@ -18,3 +18,4 @@ sudo cp /etc/letsencrypt/live/$domain_name/{fullchain.pem,privkey.pem} ./$dirNam
 
 # Concatenate key and cert into a single PEM file
 sudo cat ./$dirName/privkey.pem ./$dirName/fullchain.pem > ./$dirName/$domain_name.pem
+sudo rm -rf ./$dirName/privkey.pem ./$dirName/fullchain.pem
