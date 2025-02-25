@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Example use : ./get-certificate-for.sh example.com
+
 domain_name=$1
 dirName="$domain_name-certificate"
 
