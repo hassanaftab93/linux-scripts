@@ -80,7 +80,7 @@ if [[ "$upload_choice" =~ ^[Yy]$ ]]; then
 
     echo -e "✅ Certificate uploaded successfully!\n" >> "$upload_status_file"
 
-    echo -e "📅 Upload Date      : $(date -d "$current_date" +"%d-%m-%Y")\n >> "$upload_status_file"
+    echo -e "📅 Upload Date      : $(date -d "$current_date" +"%d-%m-%Y")\n" >> "$upload_status_file"
     echo -e "⏳ Expiration Date  : $expiration_date\n" >> "$upload_status_file"
 
     echo -e "🔹 Resource Group   : $resourceGroupName\n" >> "$upload_status_file"
