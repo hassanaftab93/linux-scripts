@@ -71,23 +71,23 @@ if [[ "$upload_choice" =~ ^[Yy]$ ]]; then
     echo "Certificate star-$sanitized_domain_name uploaded to Azure Key Vault: $keyVaultName"
 
     # Append to file upload_status.txt
-    echo "\n--------------------BEGIN--------------------\n" >> "upload_status_file"
+    echo -e "\n--------------------BEGIN--------------------\n" >> "$upload_status_file"
 
-    echo "---------------------------------------------\n" >> "upload_status_file"
-    echo "Certificate Upload Status\n" >> "upload_status_file"
-    echo "Certificate: star-$sanitized_domain_name\n" >> "upload_status_file"
-    echo "----------------------------------------\n" >> "upload_status_file"
+    echo -e "---------------------------------------------\n" >> "$upload_status_file"
+    echo -e "Certificate Upload Status\n" >> "$upload_status_file"
+    echo -e "Certificate: star-$sanitized_domain_name\n" >> "$upload_status_file"
+    echo -e "----------------------------------------\n" >> "$upload_status_file"
 
-    echo "✅ Certificate uploaded successfully!\n" >> "upload_status_file"
+    echo -e "✅ Certificate uploaded successfully!\n" >> "$upload_status_file"
 
-    echo "📅 Upload Date      : $(date -d "$current_date" +"%d-%m-%Y")" >> "upload_status_file"
-    echo "⏳ Expiration Date  : $expiration_date\n" >> "upload_status_file"
+    echo -e "📅 Upload Date      : $(date -d "$current_date\n" +"%d-%m-%Y")" >> "$upload_status_file"
+    echo -e "⏳ Expiration Date  : $expiration_date\n" >> "$upload_status_file"
 
-    echo "🔹 Resource Group   : $resourceGroupName\n" >> "upload_status_file"
-    echo "🔹 Azure Key Vault  : $keyVaultName\n" >> "upload_status_file"
-    echo "---------------------------------------------\n" >> "upload_status_file"
+    echo -e "🔹 Resource Group   : $resourceGroupName\n" >> "$upload_status_file"
+    echo -e "🔹 Azure Key Vault  : $keyVaultName\n" >> "$upload_status_file"
+    echo -e "---------------------------------------------\n" >> "$upload_status_file"
 
-    echo "\n---------------------END---------------------\n" >> "upload_status_file"
+    echo -e "\n---------------------END---------------------\n" >> "$upload_status_file"
 else
-    echo "Certificate upload skipped."
+    echo -e "\nCertificate upload skipped."
 fi
