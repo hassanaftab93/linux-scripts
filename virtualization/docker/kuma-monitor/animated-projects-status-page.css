@@ -1,0 +1,26 @@
+body{
+    overflow: hidden;
+  }
+  
+  .main{
+    display: flex;
+    flex-direction: column;
+    animation: scrollUp 60s linear infinite;
+  }
+  
+  .main:hover,
+  .main:focus-within {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scrollUp {
+    0%    { transform: translateY(0); }         /* Top */
+    8.33% { transform: translateY(0); }         /* Hold at top for 5s */
+  
+    50%   { transform: translateY(-70%); }      /* Midway (bottom) */
+    58.33%{ transform: translateY(-70%); }      /* Hold at bottom for 5s */
+  
+    100%  { transform: translateY(0); }         /* Back to top */
+  }
+  
+  

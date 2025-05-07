@@ -1,0 +1,17 @@
+Title:
+ 
+PULSE
+ 
+Markdown:
+ 
+##### Production Uptime & Latency Surveillance Engine
+ 
+For Queries, contact hassan.aftab@teo-intl.com
+ 
+Description:
+ 
+Status Page for ProjectName
+ 
+Footer:
+ 
+Managed by Hassan Aftab (Sr. DevOps Engineer) @ TEO Intl
