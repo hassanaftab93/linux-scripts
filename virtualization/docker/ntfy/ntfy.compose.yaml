@@ -1,17 +1,16 @@
 # docker compose -f ./virtualization/docker/ntfy/ntfy.compose.yaml up -d
-version: '3.8'
 
 services:
   ntfy:
     image: binwiederhier/ntfy
     container_name: ntfy
-    command: serve
+    command: serve --config /etc/ntfy/ntfy.yaml
     ports:
       - "5234:80"
     volumes:
       - ntfy_data:/var/cache/ntfy
+      - ./ntfy.yaml:/etc/ntfy/ntfy.yaml:ro
     restart: unless-stopped
 
 volumes:
   ntfy_data:
-

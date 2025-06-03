@@ -1,0 +1,19 @@
+# docker compose -f ./virtualization/docker/nginx-proxy-manager/compose.yaml up -d
+# Default credentials for Nginx Proxy Manager:
+#   Email:    admin@example.com
+#   Password: changeme
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: always
+    ports:
+      - '80:80'        # Public HTTP
+      - '81:81'        # Admin interface
+      - '443:443'      # Public HTTPS
+    volumes:
+      - npm_data:/data
+      - npm_letsencrypt:/etc/letsencrypt
+
+volumes:
+  npm_data:
+  npm_letsencrypt:
