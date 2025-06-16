@@ -8,10 +8,12 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "public_network"  # Bridged network mode
   config.vm.network "forwarded_port", guest: 5901, host: 5901  # VNC on port 5901
+  config.vm.synced_folder "~/.openvpn", "/home/vagrant/.openvpn"
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get install -y tightvncserver
+    chown -R vagrant:vagrant /home/vagrant/.openvpn
     tightvncserver :1
   SHELL
 end
