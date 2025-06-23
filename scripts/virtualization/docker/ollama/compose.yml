@@ -1,0 +1,32 @@
+# docker compose -f ~/Projects/github/tools/linux-scripts/scripts/virtualization/docker/ollama/compose.yml up -d
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434" # Expose the default port for Ollama
+    volumes:
+      - ollama_data:/data # Use a named volume for persistent data storage
+    environment:
+      - OLLAMA_ENV=production # Set environment variables if needed
+    restart: unless-stopped
+  
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-WebUI
+    ports:
+       - "3001:8080"
+    volumes:
+       - openwebui_Data:/app/Backend/Data
+    environment:
+       - OLLAMA_BASE_URL=http://ollama:11434
+    extra_hosts:
+       - "host.docker.internal:host-gateway"
+    restart: always
+
+volumes:
+  ollama_data:
+    driver: local # Use the default local driver
+  openwebui_Data:
+    driver: local # Use the default local driver

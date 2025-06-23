@@ -1,0 +1,16 @@
+# docker compose -f ~/Projects/github/tools/linux-scripts/scripts/virtualization/docker/openvas/compose.yml up -d
+services:
+  openvas:
+    image: immauss/openvas
+    container_name: openvas
+    ports:
+      - "4443:443"   # Host:Container (HTTPS)
+    volumes:
+      - openvas_data:/data  # Persistent storage
+    restart: unless-stopped
+    # Optional: Add environment variables if needed (check image docs)
+    # environment:
+    #   - VAR_NAME=value
+
+volumes:
+  openvas_data:  # Named volume for persistent data

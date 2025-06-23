@@ -1,0 +1,17 @@
+# docker compose -f ~/Projects/github/tools/linux-scripts/scripts/virtualization/docker/nessus/compose.yml up -d
+
+services:
+  nessus:
+    image: tenable/nessus:latest-ubuntu
+    container_name: nessus
+    restart: unless-stopped
+    ports:
+      - "8834:8834"  # Nessus web UI port (default: 8834)
+    volumes:
+      - nessus_data:/opt/nessus  # Persistent storage for scan data
+    environment:
+      - TZ=Etc/GMT-5  # UTC+5 (e.g., Pakistan Time)
+    privileged: true  # Required for some Nessus operations
+
+volumes:
+  nessus_data:  # Named volume for Nessus data persistence
