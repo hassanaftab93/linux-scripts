@@ -41,7 +41,9 @@ if ! command -v certbot &>/dev/null; then
 fi
 
 # Request both root and wildcard certificates
-sudo certbot certonly --manual --preferred-challenges=dns -d "$domain_name" -d "*.$domain_name"
+# sudo certbot certonly --manual --preferred-challenges=dns -d "$domain_name" -d "*.$domain_name"
+sudo certbot certonly --manual --preferred-challenges=dns -d "*.$domain_name"
+
 
 sleep 5
 
