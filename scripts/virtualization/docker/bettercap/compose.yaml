@@ -1,0 +1,17 @@
+services:
+  bettercap:
+    image: bettercap/bettercap
+    container_name: bettercap
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    devices:
+      - /dev/net/tun
+    volumes:
+      - ./bettercap-scripts:/app/bettercap-scripts
+    environment:
+      - TZ=UTC
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
