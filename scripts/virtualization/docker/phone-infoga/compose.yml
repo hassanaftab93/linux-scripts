@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  phoneinfoga:
+    image: sundowndev/phoneinfoga:latest
+    container_name: phoneinfoga
+    ports:
+      - "8081:5000"
+    command: serve
+    restart: unless-stopped
+    volumes:
+      - ./phoneinfoga_data:/app/data  # Optional: for persistent data
