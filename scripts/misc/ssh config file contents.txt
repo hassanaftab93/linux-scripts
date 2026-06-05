@@ -1,24 +1,86 @@
+# Host Names for SSH
+
+# ----------------------------------------------------------------#
+# Sheilex Dev
+
+Host sheilex-dev-app
+  HostName 135.181.138.213
+  PreferredAuthentications password
+  PubkeyAuthentication no
+  User she-web
+
+Host sheilex-dev-db
+  HostName 135.181.138.250
+  PreferredAuthentications password
+  PubkeyAuthentication no
+  User she-web
+
+# ----------------------------------------------------------------#
+# Dantaxi Prod
+
+Host dantaxi-prod-app
+  HostName 192.168.30.75
+  PreferredAuthentications password
+  PubkeyAuthentication no
+  User teo
+
+Host dantaxi-prod-db
+  HostName 192.168.30.76
+  PreferredAuthentications password
+  PubkeyAuthentication no
+  User teo
+
+# ----------------------------------------------------------------#
+# Dantaxi Stg
+
+Host dantaxi-stg-app
+  HostName 192.168.30.72
+  PreferredAuthentications password
+  PubkeyAuthentication no
+  User dantaxi
+
+Host dantaxi-stg-db
+  HostName 192.168.30.71
+  PreferredAuthentications password
+  PubkeyAuthentication no
+  User dantaxi
+
+# ----------------------------------------------------------------#
+# DCR Dev
+
+Host dcr-dev-app
+  HostName 65.21.229.46
+  PreferredAuthentications password
+  PubkeyAuthentication no
+  User root
+
+# ----------------------------------------------------------------#
+# SSH setup for github
+
 Host github.com
-User git
-Port 22
-Hostname github.com
-IdentityFile ~/.ssh/id_github
-TCPKeepAlive yes
-IdentitiesOnly yes
+  User git
+  Port 22
+  HostName github.com
+  IdentityFile C:/Users/HassanAftab/.ssh/id_github
+  TCPKeepAlive yes
+  IdentitiesOnly yes
 
 Host 51.104.219.127
   HostName 51.104.219.127
-  IdentityFile ~/.ssh/id_rsa.pub
+  IdentityFile C:/Users/HassanAftab/.ssh/id_rsa
   Compression yes
   User testuser
+
+# ----------------------------------------------------------------#
+# SSH setup for Azure DevOps
 
 Host ssh.dev.azure.com
     HostName ssh.dev.azure.com
     User git
     IdentitiesOnly yes
     AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_azure
-    IdentityFile ~/.ssh/id_teodevops_ft
-    IdentityFile ~/.ssh/terraform-id_key
-    HostkeyAlgorithms +ssh-rsa
-    PubkeyAcceptedKeyTypes=ssh-rsa
+    IdentityFile C:/Users/HassanAftab/.ssh/id_rsa
+    IdentityFile C:/Users/HassanAftab/.ssh/terraform-id_key
+    PubkeyAcceptedKeyTypes +rsa-sha2-512,rsa-sha2-256
+    HostKeyAlgorithms +rsa-sha2-512,rsa-sha2-256,ssh-rsa
+    KexAlgorithms -mlkem768x25519-sha256
