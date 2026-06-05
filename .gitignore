@@ -131,4 +131,4 @@ dmypy.json
 .pyre/
 .vagrant
 **/*.pem
-**/*-certificate*
+**/*-certificate*/
